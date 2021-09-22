@@ -105,8 +105,6 @@
     		<artifactId>javax.servlet-api</artifactId>
     		<version>4.0.0</version>
 		</dependency> 
-	
-		
 		<dependency>
     		<groupId>mysql</groupId>
     		<artifactId>mysql-connector-java</artifactId>
@@ -148,16 +146,15 @@
     		<artifactId>hibernate-core</artifactId>
     		<version>5.5.7.Final</version>
 		</dependency>
-		<!--  
-		<dependency>
-    		<groupId>com.mchange</groupId>
-    		<artifactId>c3p0</artifactId>
-   			<version>0.9.5.5</version>
-		</dependency>-->
 		<dependency>
     		<groupId>org.hibernate</groupId>
     		<artifactId>hibernate-c3p0</artifactId>
     		<version>5.5.7.Final</version>
+		</dependency>
+		<dependency>
+    		<groupId>com.mchange</groupId>
+    		<artifactId>c3p0</artifactId>
+   			<version>0.9.5.5</version>
 		</dependency>
 	</dependencies>
   
