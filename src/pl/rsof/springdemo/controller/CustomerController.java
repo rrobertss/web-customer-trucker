@@ -9,9 +9,10 @@ package pl.rsof.springdemo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import pl.rsof.springdemo.dao.CustomerDAO;
+import pl.rsof.springdemo.service.CustomerService;
 
 /**
  * <p></p><p>20 wrz 2021</p>
@@ -24,13 +25,13 @@ public class CustomerController {
 
 	
 	@Autowired
-	private CustomerDAO customerDAO;
+	private CustomerService customerService;
 	
 	
-	@RequestMapping("/list")
+	@GetMapping("/list")
 	public String listCustomers(Model model) {
 		
-		model.addAttribute("customers", customerDAO.getCustomers());
+		model.addAttribute("customers", customerService.getCustomers());
 		
 		return "list-customers";
 	}
