@@ -11,8 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.rsof.springdemo.entity.Customer;
 import pl.rsof.springdemo.service.CustomerService;
@@ -57,5 +59,18 @@ public class CustomerController {
 		
 		return "redirect:/customer/list";
 	}
+	
+	
+	@GetMapping("/showFormForUpdate")
+	public String getCustomerFromId(@RequestParam("customerId") int id, Model model) {
+		
+		Customer customer = customerService.getCustomerById(id);
+		
+		// set customer as a model attribute to pre-populate the form
+		model.addAttribute("customer", customer);
+		
+		return "customer-form";
+	}
+	
 	
 }

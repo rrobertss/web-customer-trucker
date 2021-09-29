@@ -18,6 +18,10 @@
 	<div id="container">
 		<h3>Save customer</h3>
 		<form:form action="saveCustomer" modelAttribute="customer" method="post">
+		
+			<!-- need to associate this data with customer id, hidden field -->
+			<form:hidden path="id"/>
+			
 			<table>
 				<tbody>
 					<tr>
